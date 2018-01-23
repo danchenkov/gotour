@@ -1,14 +1,56 @@
-# Binaries for programs and plugins
-*.exe
-*.dll
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
 *.so
-*.dylib
+bin
 
-# Test binary, build with `go test -c`
-*.test
+# Folders
+_obj
+_test
+index
+var
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
 
-# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
-.glide/
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+
+# other
+*.ai
+*.psd
+.DS_Store
+.BridgeSort
+*.sublime-*
+.csscomb.json
+.sass-cache
+
+data/*.bleve
+web/data
+
+views/rumors/sample.html
+web/bootstrap/
+web/bootstrap4/
+web/unprefixed/
+web/theme/unprefixed
+node_modules
+temp/
+views/disabled
+
+web/theme/css/application.css.map
+*.css.map
+
+views/bigotry-and-hate/color.html
+
+# WebDriver test submodules
+src/github.com/onsi/
+src/github.com/sclevine/
+
