@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 
-	"github.com/fatih/color"
 	"golang.org/x/tour/tree"
 )
 
@@ -32,18 +31,10 @@ func Same(t1, t2 *tree.Tree) bool {
 	go WalkWrapper(t1, ch1)
 	go WalkWrapper(t2, ch2)
 
-	for {
-		v1, ok1 := <-ch1
-		if !ok1 {
-			break
-		}
+	for v1 := range ch1 {
 		match[v1] += 1
 	}
-	for {
-		v2, ok2 := <-ch2
-		if !ok2 {
-			break
-		}
+	for v2 := range ch2 {
 		match[v2] += 1
 	}
 	for _, v := range match {
@@ -67,15 +58,15 @@ func main() {
 
 	fmt.Print("tree.New(1) == tree.New(1): ")
 	if Same(tree.New(1), tree.New(1)) {
-		color.Green("PASSED")
+		fmt.Println("PASSED")
 	} else {
-		color.Red("FAILED")
+		fmt.Println("FAILED")
 	}
 
 	fmt.Print("tree.New(1) != tree.New(2): ")
 	if !Same(tree.New(1), tree.New(2)) {
-		color.Green("PASSED")
+		fmt.Println("PASSED")
 	} else {
-		color.Red("FAILED")
+		fmt.Println("FAILED")
 	}
 }
